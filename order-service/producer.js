@@ -11,12 +11,12 @@ const initProducer = async () => {
   await producer.connect();
 };
 
-// const sendOrderEvent = async (order) => {
-//   console.log("Sending order event:", order);
-//   await producer.send({
-//     topic: "order_created",
-//     messages: [{ value: JSON.stringify(order) }],
-//   });
-// };
+const sendOrderEvent = async (order) => {
+  const snt = await producer.send({
+    topic: "order_created",
+    messages: [{ value: JSON.stringify(order) }],
+  });
+  console.log("Sending order event:", order, snt);
+};
 
-module.exports = { initProducer };
+module.exports = { initProducer, sendOrderEvent };
