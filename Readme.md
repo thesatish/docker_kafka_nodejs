@@ -13,6 +13,7 @@
 - docker-compose logs mongodb
 - docker logs inventory-service
 - docker logs order-service
+- docker logs mongo-ui
 
 # Rebuild and Start All Services
 - docker-compose up --build
